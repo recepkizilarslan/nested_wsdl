@@ -1,0 +1,837 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://intf.service.moneytransferapi.tlr.hmn.ykb.com/" name="IADCMoneyTransferAPIService" targetNamespace="http://intf.service.moneytransferapi.tlr.hmn.ykb.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://intf.service.moneytransferapi.tlr.hmn.ykb.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://intf.service.moneytransferapi.tlr.hmn.ykb.com/">
+  <xs:element name="getMoneyTransferTypes" type="tns:getMoneyTransferTypes"/>
+  <xs:element name="getMoneyTransferTypesResponse" type="tns:getMoneyTransferTypesResponse"/>
+  <xs:element name="getMoneyTransfersDetails" type="tns:getMoneyTransfersDetails"/>
+  <xs:element name="getMoneyTransfersDetailsResponse" type="tns:getMoneyTransfersDetailsResponse"/>
+  <xs:element name="getRemittanceCommissionDetail" type="tns:getRemittanceCommissionDetail"/>
+  <xs:element name="getRemittanceCommissionDetailResponse" type="tns:getRemittanceCommissionDetailResponse"/>
+  <xs:element name="moneyTransferBetweenOwnAccount" type="tns:moneyTransferBetweenOwnAccount"/>
+  <xs:element name="moneyTransferBetweenOwnAccountResponse" type="tns:moneyTransferBetweenOwnAccountResponse"/>
+  <xs:element name="moneyTransferToAccount" type="tns:moneyTransferToAccount"/>
+  <xs:element name="moneyTransferToAccountResponse" type="tns:moneyTransferToAccountResponse"/>
+  <xs:element name="moneyTransferToName" type="tns:moneyTransferToName"/>
+  <xs:element name="moneyTransferToNameResponse" type="tns:moneyTransferToNameResponse"/>
+  <xs:element name="multipleMoneyTransferToAccount" type="tns:multipleMoneyTransferToAccount"/>
+  <xs:element name="multipleMoneyTransferToAccountResponse" type="tns:multipleMoneyTransferToAccountResponse"/>
+  <xs:element name="remittanceFromCreditCardOwnerAccount" type="tns:remittanceFromCreditCardOwnerAccount"/>
+  <xs:element name="remittanceFromCreditCardOwnerAccountResponse" type="tns:remittanceFromCreditCardOwnerAccountResponse"/>
+  <xs:element name="remittanceFromCreditCardToAccount" type="tns:remittanceFromCreditCardToAccount"/>
+  <xs:element name="remittanceFromCreditCardToAccountResponse" type="tns:remittanceFromCreditCardToAccountResponse"/>
+  <xs:element name="updateExternalMoneyTransfer" type="tns:updateExternalMoneyTransfer"/>
+  <xs:element name="updateExternalMoneyTransferResponse" type="tns:updateExternalMoneyTransferResponse"/>
+  <xs:element name="validationOfremittanceFromCreditCardOwnerAccount" type="tns:validationOfremittanceFromCreditCardOwnerAccount"/>
+  <xs:element name="validationOfremittanceFromCreditCardOwnerAccountResponse" type="tns:validationOfremittanceFromCreditCardOwnerAccountResponse"/>
+  <xs:element name="validationOfremittanceFromCreditCardToAccount" type="tns:validationOfremittanceFromCreditCardToAccount"/>
+  <xs:element name="validationOfremittanceFromCreditCardToAccountResponse" type="tns:validationOfremittanceFromCreditCardToAccountResponse"/>
+  <xs:complexType name="getRemittanceCommissionDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:remittanceCommissionDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="remittanceCommissionDTO">
+    <xs:complexContent>
+      <xs:extension base="tns:coreDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountCurr" type="xs:string"/>
+          <xs:element minOccurs="0" name="accountNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="additionalInformations" type="xs:string"/>
+          <xs:element minOccurs="0" name="branch" type="xs:string"/>
+          <xs:element minOccurs="0" name="cardNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="clientNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="commAccountCcy" type="xs:string"/>
+          <xs:element minOccurs="0" name="commAccountNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionChannel" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionIban" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionScaled" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionType" type="xs:string"/>
+          <xs:element name="corparateCreditCard" type="xs:boolean"/>
+          <xs:element name="costIncluded" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="customDebtorCommissionGl" type="xs:string"/>
+          <xs:element name="ignore" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="messageType" type="xs:string"/>
+          <xs:element minOccurs="0" name="narrative" type="xs:string"/>
+          <xs:element minOccurs="0" name="operationAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="operationCcy" type="xs:string"/>
+          <xs:element minOccurs="0" name="operationRef" type="xs:string"/>
+          <xs:element minOccurs="0" name="operationTaxAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="otherClientNo" type="xs:int"/>
+          <xs:element name="ownAccount" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="processDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="processType" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverAccountNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverBank" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverBranch" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverIban" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverName" type="xs:string"/>
+          <xs:element name="regularPayment" type="xs:boolean"/>
+          <xs:element name="rentPayment" type="xs:boolean"/>
+          <xs:element name="scaleCommission" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="scaleReferenceCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="secondAccountNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderIban" type="xs:string"/>
+          <xs:element minOccurs="0" name="totalCommissionAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="userCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="coreDTO">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getRemittanceCommissionDetailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:remittanceCommissionDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validationOfremittanceFromCreditCardOwnerAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestRemittanceFromCreditCardToAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestRemittanceFromCreditCardToAccount">
+    <xs:complexContent>
+      <xs:extension base="tns:baseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+          <xs:element minOccurs="0" name="cardNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="clientNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="currencyCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="explanation" type="xs:string"/>
+          <xs:element minOccurs="0" name="fee" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="installmentInformation" type="tns:installmentInformationDTO"/>
+          <xs:element minOccurs="0" name="kolasType" type="tns:kolasTypeEnum"/>
+          <xs:element minOccurs="0" name="kolasValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="location" type="xs:string"/>
+          <xs:element minOccurs="0" name="odemeTipi" type="xs:string"/>
+          <xs:element minOccurs="0" name="pendingtransactionFlag" type="tns:pendingTransactionFlag"/>
+          <xs:element minOccurs="0" name="requestId" type="xs:string"/>
+          <xs:element minOccurs="0" name="service" type="xs:string"/>
+          <xs:element minOccurs="0" name="terminalID" type="xs:string"/>
+          <xs:element minOccurs="0" name="toAccountValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="toAccounttype" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:coreDTO">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="installmentInformationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="installmentAmount" type="xs:decimal"/>
+      <xs:element name="installmentNumber" type="xs:int"/>
+      <xs:element minOccurs="0" name="interestAmount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="interestRate" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validationOfremittanceFromCreditCardOwnerAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseValidationOfRemittanceFromCreditCardToAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseValidationOfRemittanceFromCreditCardToAccount">
+    <xs:complexContent>
+      <xs:extension base="tns:baseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="validationResult" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType abstract="true" name="baseResponse">
+    <xs:complexContent>
+      <xs:extension base="tns:coreDTO">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="parameters">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="key" type="xs:string"/>
+                      <xs:element minOccurs="0" name="value" type="xs:anyType"/>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="text" type="xs:string"/>
+          <xs:element minOccurs="0" name="type" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="updateExternalMoneyTransfer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestMoneyTransferExternals"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestMoneyTransferExternals">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="externalMoneyTransferDTO" type="tns:externalMoneyTransferDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="externalMoneyTransferDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="commission" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="contractno" type="xs:long"/>
+      <xs:element minOccurs="0" name="currency" type="xs:string"/>
+      <xs:element minOccurs="0" name="explanation" type="xs:string"/>
+      <xs:element minOccurs="0" name="fromIBAN" type="xs:string"/>
+      <xs:element minOccurs="0" name="orderid" type="xs:string"/>
+      <xs:element minOccurs="0" name="orderingInformationDto" type="tns:orderingInformationDTO"/>
+      <xs:element minOccurs="0" name="processtype" type="xs:string"/>
+      <xs:element minOccurs="0" name="result_code" type="xs:int"/>
+      <xs:element minOccurs="0" name="result_desc" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="TCKN" type="xs:long"/>
+      <xs:element minOccurs="0" name="terminal" type="xs:string"/>
+      <xs:element minOccurs="0" name="toIBAN" type="xs:string"/>
+      <xs:element minOccurs="0" name="VKN" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="orderingInformationDTO">
+    <xs:complexContent>
+      <xs:extension base="tns:coreDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="orderingClientAccountNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="orderingClientIdentity" type="xs:string"/>
+          <xs:element minOccurs="0" name="orderingClientName" type="xs:string"/>
+          <xs:element minOccurs="0" name="orderingClientNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="orderingCustCityCountry" type="xs:string"/>
+          <xs:element minOccurs="0" name="orderingCustomerAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="orderingCustomerBirthDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="orderingCustomerBirthPlace" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="updateExternalMoneyTransferResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseUpdateMoneyTransferExternals"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseUpdateMoneyTransferExternals">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMoneyTransferTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestMoneyTransferTypes"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestMoneyTransferTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transferType" type="tns:transferTypes"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMoneyTransferTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseMoneyTransferTypes"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseMoneyTransferTypes">
+    <xs:sequence>
+      <xs:element name="moneyTransferTypes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:string"/>
+                  <xs:element minOccurs="0" name="value" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="remittanceFromCreditCardOwnerAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestRemittanceFromCreditCardToAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="remittanceFromCreditCardOwnerAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseRemittanceFromCreditCardToAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseRemittanceFromCreditCardToAccount">
+    <xs:complexContent>
+      <xs:extension base="tns:baseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="provisionNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="moneyTransferToName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestMoneyTransfertoName"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestMoneyTransfertoName">
+    <xs:complexContent>
+      <xs:extension base="tns:baseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="branch" type="xs:string"/>
+          <xs:element minOccurs="0" name="cardno" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="clientno" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionAccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionAccountValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="corporateUserCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="custom_explanation" type="xs:string"/>
+          <xs:element minOccurs="0" name="fromAccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="fromAccountValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="narrative" type="xs:string"/>
+          <xs:element minOccurs="0" name="paymenttype" type="xs:string"/>
+          <xs:element minOccurs="0" name="pendingtransactionFlag" type="tns:pendingTransactionFlag"/>
+          <xs:element minOccurs="0" name="receiverPhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiveradress" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverbirthdate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="receiverfather" type="xs:string"/>
+          <xs:element minOccurs="0" name="receivername" type="xs:string"/>
+          <xs:element minOccurs="0" name="requestid" type="xs:string"/>
+          <xs:element minOccurs="0" name="statCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="terminal" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactioncurrency" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactioncurrencycode" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactiondate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="moneyTransferToNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseMoneyTransfertoName"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseMoneyTransfertoName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contractNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="mtkey" type="xs:string"/>
+      <xs:element minOccurs="0" name="responsecode" type="xs:string"/>
+      <xs:element minOccurs="0" name="responsedesc" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validationOfremittanceFromCreditCardToAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestRemittanceFromCreditCardToAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validationOfremittanceFromCreditCardToAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseValidationOfRemittanceFromCreditCardToAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="moneyTransferToAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestMoneyTransfer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestMoneyTransfer">
+    <xs:complexContent>
+      <xs:extension base="tns:baseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="cardno" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="clientno" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionAccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionAccountValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="corporateUserCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="custom_explanation" type="xs:string"/>
+          <xs:element minOccurs="0" name="fromAccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="fromAccountValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="isValidation" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="kolasType" type="tns:kolasTypeEnum"/>
+          <xs:element minOccurs="0" name="kolasValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="paymenttype" type="xs:string"/>
+          <xs:element minOccurs="0" name="pendingtransactionFlag" type="tns:pendingTransactionFlag"/>
+          <xs:element minOccurs="0" name="qrReference" type="xs:string"/>
+          <xs:element minOccurs="0" name="qrStreamType" type="tns:qrStreamTypeEnum"/>
+          <xs:element minOccurs="0" name="requestid" type="xs:string"/>
+          <xs:element minOccurs="0" name="scaleCommission" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="terminal" type="xs:string"/>
+          <xs:element minOccurs="0" name="toAccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="toAccountValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactioncurrency" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactiondate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="moneyTransferToAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseMoneyTransfer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseMoneyTransfer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="commissionamount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="contractNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="proccode" type="xs:string"/>
+      <xs:element minOccurs="0" name="responsecode" type="xs:string"/>
+      <xs:element minOccurs="0" name="responsedesc" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMoneyTransfersDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestMoneyTransfersInquiry"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestMoneyTransfersInquiry">
+    <xs:complexContent>
+      <xs:extension base="tns:baseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="channelCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="contractNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="procedureCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="productReferance" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverAccountNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverClientNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderAccountNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderClientNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+          <xs:element minOccurs="0" name="upId" type="xs:long"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getMoneyTransfersDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseMoneyTransfersInquiry"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseMoneyTransfersInquiry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="hasRecord" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="moneyTransferDto" nillable="true" type="tns:moneyTransferDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="moneyTransferDTO">
+    <xs:complexContent>
+      <xs:extension base="tns:coreDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountingDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="accountingNarrative" type="xs:string"/>
+          <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="channelCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionAccount" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionAccountCurrency" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="commissionCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="conditionalRemittance" type="xs:string"/>
+          <xs:element minOccurs="0" name="conductorClientNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="contractNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="createUser" type="xs:string"/>
+          <xs:element minOccurs="0" name="currency" type="xs:string"/>
+          <xs:element minOccurs="0" name="hmnref" type="xs:string"/>
+          <xs:element minOccurs="0" name="kolasTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="kolasValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="LUC" type="xs:long"/>
+          <xs:element minOccurs="0" name="mobileTransferId" type="xs:long"/>
+          <xs:element minOccurs="0" name="moneyTransferKey" type="xs:string"/>
+          <xs:element minOccurs="0" name="oid" type="xs:long"/>
+          <xs:element minOccurs="0" name="operationType" type="xs:string"/>
+          <xs:element minOccurs="0" name="otp" type="xs:string"/>
+          <xs:element minOccurs="0" name="paymentCategoryType" type="xs:string"/>
+          <xs:element minOccurs="0" name="paymentType" type="xs:string"/>
+          <xs:element minOccurs="0" name="priority" type="xs:int"/>
+          <xs:element minOccurs="0" name="procedureCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="procedureDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="productCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="productReference" type="xs:string"/>
+          <xs:element minOccurs="0" name="qrCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="qrReference" type="xs:string"/>
+          <xs:element minOccurs="0" name="qrStreamType" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiptNarrative" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverAccountCurrency" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverAccountNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverAccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverBirthdate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="receiverClientNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="receiverFathersName" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverName" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverPhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverTckn" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiverTransactionBranch" type="xs:string"/>
+          <xs:element minOccurs="0" name="relationalId" type="xs:long"/>
+          <xs:element minOccurs="0" name="requestPayReferenceCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="requestPayTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="residenceCountryCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderAccountCurrency" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderAccountNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderAccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderCardNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderClientNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="senderName" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderPhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderTckn" type="xs:string"/>
+          <xs:element minOccurs="0" name="senderTransactionBranch" type="xs:string"/>
+          <xs:element minOccurs="0" name="sessionKey" type="xs:string"/>
+          <xs:element minOccurs="0" name="srvTxsrvSerno" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+          <xs:element minOccurs="0" name="thirdPersonName" type="xs:string"/>
+          <xs:element minOccurs="0" name="thirdPersonTckn" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactionDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="transactionOwner" type="xs:string"/>
+          <xs:element minOccurs="0" name="uniqueProcessId" type="xs:long"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="remittanceFromCreditCardToAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestRemittanceFromCreditCardToAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="remittanceFromCreditCardToAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseRemittanceFromCreditCardToAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="moneyTransferBetweenOwnAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestMoneyTransferBetweenOwnAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestMoneyTransferBetweenOwnAccount">
+    <xs:complexContent>
+      <xs:extension base="tns:baseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="cardno" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="clientno" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionAccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionAccountValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="custom_explanation" type="xs:string"/>
+          <xs:element minOccurs="0" name="fromAccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="fromAccountValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="isValidation" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="requestid" type="xs:string"/>
+          <xs:element minOccurs="0" name="terminal" type="xs:string"/>
+          <xs:element minOccurs="0" name="toAccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="toAccountValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactioncurrency" type="xs:string"/>
+          <xs:element minOccurs="0" name="transactiondate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="moneyTransferBetweenOwnAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseMoneyTransferBetweenOwnAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseMoneyTransferBetweenOwnAccount">
+    <xs:complexContent>
+      <xs:extension base="tns:baseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="commissionamount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="contractNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="proccode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responsecode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responsedesc" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="multipleMoneyTransferToAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestMultipleMoneyTransfer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestMultipleMoneyTransfer">
+    <xs:complexContent>
+      <xs:extension base="tns:baseRequest">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="request" nillable="true" type="tns:requestMoneyTransfer"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="multipleMoneyTransferToAccountResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:responseMoneyTransfer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="kolasTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TCKN"/>
+      <xs:enumeration value="VKN"/>
+      <xs:enumeration value="YKN"/>
+      <xs:enumeration value="PASSAPORT"/>
+      <xs:enumeration value="EMAIL"/>
+      <xs:enumeration value="TELEPHONE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="pendingTransactionFlag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Alert"/>
+      <xs:enumeration value="Timeout"/>
+      <xs:enumeration value="DirectFraud"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="transferTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EFT"/>
+      <xs:enumeration value="HAVALE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="qrStreamTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ONLINE_PAYMENT"/>
+      <xs:enumeration value="OFFLINE_PAYMENT"/>
+      <xs:enumeration value="PERSON_TO_PERSON"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HmnServiceException" type="tns:HmnServiceException"/>
+  <xs:complexType name="HmnServiceException">
+    <xs:sequence>
+      <xs:element name="module" nillable="true" type="xs:string"/>
+      <xs:element name="type" nillable="true" type="xs:string"/>
+      <xs:element name="id" nillable="true" type="xs:long"/>
+      <xs:element name="text" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Exception" type="tns:Exception"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="moneyTransferToAccountResponse">
+    <wsdl:part element="ns1:moneyTransferToAccountResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="remittanceFromCreditCardToAccountResponse">
+    <wsdl:part element="ns1:remittanceFromCreditCardToAccountResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="moneyTransferToNameResponse">
+    <wsdl:part element="ns1:moneyTransferToNameResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part element="ns1:Exception" name="Exception">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validationOfremittanceFromCreditCardOwnerAccount">
+    <wsdl:part element="ns1:validationOfremittanceFromCreditCardOwnerAccount" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="remittanceFromCreditCardOwnerAccountResponse">
+    <wsdl:part element="ns1:remittanceFromCreditCardOwnerAccountResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMoneyTransferTypes">
+    <wsdl:part element="ns1:getMoneyTransferTypes" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="remittanceFromCreditCardOwnerAccount">
+    <wsdl:part element="ns1:remittanceFromCreditCardOwnerAccount" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="moneyTransferBetweenOwnAccountResponse">
+    <wsdl:part element="ns1:moneyTransferBetweenOwnAccountResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validationOfremittanceFromCreditCardToAccount">
+    <wsdl:part element="ns1:validationOfremittanceFromCreditCardToAccount" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateExternalMoneyTransferResponse">
+    <wsdl:part element="ns1:updateExternalMoneyTransferResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMoneyTransferTypesResponse">
+    <wsdl:part element="ns1:getMoneyTransferTypesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="moneyTransferBetweenOwnAccount">
+    <wsdl:part element="ns1:moneyTransferBetweenOwnAccount" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validationOfremittanceFromCreditCardToAccountResponse">
+    <wsdl:part element="ns1:validationOfremittanceFromCreditCardToAccountResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multipleMoneyTransferToAccount">
+    <wsdl:part element="ns1:multipleMoneyTransferToAccount" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRemittanceCommissionDetail">
+    <wsdl:part element="ns1:getRemittanceCommissionDetail" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRemittanceCommissionDetailResponse">
+    <wsdl:part element="ns1:getRemittanceCommissionDetailResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validationOfremittanceFromCreditCardOwnerAccountResponse">
+    <wsdl:part element="ns1:validationOfremittanceFromCreditCardOwnerAccountResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateExternalMoneyTransfer">
+    <wsdl:part element="ns1:updateExternalMoneyTransfer" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMoneyTransfersDetailsResponse">
+    <wsdl:part element="ns1:getMoneyTransfersDetailsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="moneyTransferToName">
+    <wsdl:part element="ns1:moneyTransferToName" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="moneyTransferToAccount">
+    <wsdl:part element="ns1:moneyTransferToAccount" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="HmnServiceException">
+    <wsdl:part element="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multipleMoneyTransferToAccountResponse">
+    <wsdl:part element="ns1:multipleMoneyTransferToAccountResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMoneyTransfersDetails">
+    <wsdl:part element="ns1:getMoneyTransfersDetails" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="remittanceFromCreditCardToAccount">
+    <wsdl:part element="ns1:remittanceFromCreditCardToAccount" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IADCMoneyTransferAPIService">
+    <wsdl:operation name="getRemittanceCommissionDetail">
+      <wsdl:input message="ns1:getRemittanceCommissionDetail" name="getRemittanceCommissionDetail">
+    </wsdl:input>
+      <wsdl:output message="ns1:getRemittanceCommissionDetailResponse" name="getRemittanceCommissionDetailResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validationOfremittanceFromCreditCardOwnerAccount">
+      <wsdl:input message="ns1:validationOfremittanceFromCreditCardOwnerAccount" name="validationOfremittanceFromCreditCardOwnerAccount">
+    </wsdl:input>
+      <wsdl:output message="ns1:validationOfremittanceFromCreditCardOwnerAccountResponse" name="validationOfremittanceFromCreditCardOwnerAccountResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateExternalMoneyTransfer">
+      <wsdl:input message="ns1:updateExternalMoneyTransfer" name="updateExternalMoneyTransfer">
+    </wsdl:input>
+      <wsdl:output message="ns1:updateExternalMoneyTransferResponse" name="updateExternalMoneyTransferResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMoneyTransferTypes">
+      <wsdl:input message="ns1:getMoneyTransferTypes" name="getMoneyTransferTypes">
+    </wsdl:input>
+      <wsdl:output message="ns1:getMoneyTransferTypesResponse" name="getMoneyTransferTypesResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="remittanceFromCreditCardOwnerAccount">
+      <wsdl:input message="ns1:remittanceFromCreditCardOwnerAccount" name="remittanceFromCreditCardOwnerAccount">
+    </wsdl:input>
+      <wsdl:output message="ns1:remittanceFromCreditCardOwnerAccountResponse" name="remittanceFromCreditCardOwnerAccountResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="moneyTransferToName">
+      <wsdl:input message="ns1:moneyTransferToName" name="moneyTransferToName">
+    </wsdl:input>
+      <wsdl:output message="ns1:moneyTransferToNameResponse" name="moneyTransferToNameResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+      <wsdl:fault message="ns1:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validationOfremittanceFromCreditCardToAccount">
+      <wsdl:input message="ns1:validationOfremittanceFromCreditCardToAccount" name="validationOfremittanceFromCreditCardToAccount">
+    </wsdl:input>
+      <wsdl:output message="ns1:validationOfremittanceFromCreditCardToAccountResponse" name="validationOfremittanceFromCreditCardToAccountResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="moneyTransferToAccount">
+      <wsdl:input message="ns1:moneyTransferToAccount" name="moneyTransferToAccount">
+    </wsdl:input>
+      <wsdl:output message="ns1:moneyTransferToAccountResponse" name="moneyTransferToAccountResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+      <wsdl:fault message="ns1:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMoneyTransfersDetails">
+      <wsdl:input message="ns1:getMoneyTransfersDetails" name="getMoneyTransfersDetails">
+    </wsdl:input>
+      <wsdl:output message="ns1:getMoneyTransfersDetailsResponse" name="getMoneyTransfersDetailsResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="remittanceFromCreditCardToAccount">
+      <wsdl:input message="ns1:remittanceFromCreditCardToAccount" name="remittanceFromCreditCardToAccount">
+    </wsdl:input>
+      <wsdl:output message="ns1:remittanceFromCreditCardToAccountResponse" name="remittanceFromCreditCardToAccountResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="moneyTransferBetweenOwnAccount">
+      <wsdl:input message="ns1:moneyTransferBetweenOwnAccount" name="moneyTransferBetweenOwnAccount">
+    </wsdl:input>
+      <wsdl:output message="ns1:moneyTransferBetweenOwnAccountResponse" name="moneyTransferBetweenOwnAccountResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+      <wsdl:fault message="ns1:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="multipleMoneyTransferToAccount">
+      <wsdl:input message="ns1:multipleMoneyTransferToAccount" name="multipleMoneyTransferToAccount">
+    </wsdl:input>
+      <wsdl:output message="ns1:multipleMoneyTransferToAccountResponse" name="multipleMoneyTransferToAccountResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
