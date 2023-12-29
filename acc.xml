@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:ns1="http://intf.service.acc.hmn.ykb.com/" 
+name="IAccLimitDocumentValidationService" targetNamespace="http://intf.service.acc.hmn.ykb.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://intf.service.acc.hmn.ykb.com/" xmlns:ns0="http://intf.integration.facade.acq.hmn.ykb.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://intf.service.acc.hmn.ykb.com/">
+  <xs:import namespace="http://intf.integration.facade.acq.hmn.ykb.com/"/>
+  <xs:element name="validateDocumentByProductNoAndCerfiticateNo" type="tns:validateDocumentByProductNoAndCerfiticateNo"/>
+  <xs:element name="validateDocumentByProductNoAndCerfiticateNoResponse" type="tns:validateDocumentByProductNoAndCerfiticateNoResponse"/>
+  <xs:complexType name="requestValidateProductLink">
+    <xs:complexContent>
+      <xs:extension base="tns:baseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="context" type="tns:transactionContext"/>
+          <xs:element name="fieldValues">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="key" type="xs:string"/>
+                      <xs:element minOccurs="0" name="value" type="xs:anyType"/>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="productLinkCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:coreDTO">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="coreDTO">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="transactionContext">
+    <xs:complexContent>
+      <xs:extension base="tns:coreDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="customerFullName" type="xs:string"/>
+          <xs:element minOccurs="0" name="customerNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="operationAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="operationBranch" type="xs:string"/>
+          <xs:element minOccurs="0" name="operationCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="operationCurrency" type="xs:string"/>
+          <xs:element minOccurs="0" name="quantity" type="xs:int"/>
+          <xs:element minOccurs="0" name="sbuType" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="transactionContextCommissionListDTO" nillable="true" type="tns:transactionContextCommissionDTO"/>
+          <xs:element minOccurs="0" name="userCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="transactionContextCommissionDTO">
+    <xs:complexContent>
+      <xs:extension base="tns:coreDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="commissionAmount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="commissionAmountTL" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="commissionCode" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="commissionCurrency" type="xs:string"/>
+          <xs:element minOccurs="0" name="commissionOperCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fieldValueMap">
+    <xs:complexContent>
+      <xs:extension base="tns:coreDTO">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="responseValidateProductLink">
+    <xs:complexContent>
+      <xs:extension base="tns:baseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="linkAvailable" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="userMessage" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType abstract="true" name="baseResponse">
+    <xs:complexContent>
+      <xs:extension base="tns:coreDTO">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="parameters">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="key" type="xs:string"/>
+                      <xs:element minOccurs="0" name="value" type="xs:anyType"/>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="text" type="xs:string"/>
+          <xs:element minOccurs="0" name="type" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="validateDocumentByProductNoAndCerfiticateNo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:requestLimitDocumentValidation"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestLimitDocumentValidation">
+    <xs:complexContent>
+      <xs:extension base="tns:baseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="certificateNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="productNo" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="validateDocumentByProductNoAndCerfiticateNoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseLimitDocumentValidation"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseLimitDocumentValidation">
+    <xs:complexContent>
+      <xs:extension base="tns:baseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorMessage" type="xs:string"/>
+          <xs:element name="isDocumentValid" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="validateCommissionProductLink" nillable="true" type="ns0:validateCommissionProductLink"/>
+  <xs:element name="validateCommissionProductLinkResponse" nillable="true" type="ns0:validateCommissionProductLinkResponse"/>
+  <xs:element name="HmnServiceException" type="tns:HmnServiceException"/>
+  <xs:complexType name="HmnServiceException">
+    <xs:sequence>
+      <xs:element name="module" nillable="true" type="xs:string"/>
+      <xs:element name="type" nillable="true" type="xs:string"/>
+      <xs:element name="id" nillable="true" type="xs:long"/>
+      <xs:element name="text" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://intf.integration.facade.acq.hmn.ykb.com/" xmlns:ns1="http://intf.service.acc.hmn.ykb.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://intf.integration.facade.acq.hmn.ykb.com/">
+  <xs:import namespace="http://intf.service.acc.hmn.ykb.com/"/>
+  <xs:element name="validateCommissionProductLink" type="tns:validateCommissionProductLink"/>
+  <xs:element name="validateCommissionProductLinkResponse" type="tns:validateCommissionProductLinkResponse"/>
+  <xs:complexType name="validateCommissionProductLink">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="arg0" type="ns1:requestValidateProductLink"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validateCommissionProductLinkResponse">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="return" type="ns1:responseValidateProductLink"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="validateCommissionProductLink">
+    <wsdl:part element="ns1:validateCommissionProductLink" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateDocumentByProductNoAndCerfiticateNo">
+    <wsdl:part element="ns1:validateDocumentByProductNoAndCerfiticateNo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="HmnServiceException">
+    <wsdl:part element="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateDocumentByProductNoAndCerfiticateNoResponse">
+    <wsdl:part element="ns1:validateDocumentByProductNoAndCerfiticateNoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateCommissionProductLinkResponse">
+    <wsdl:part element="ns1:validateCommissionProductLinkResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IAccLimitDocumentValidationService">
+    <wsdl:operation name="validateDocumentByProductNoAndCerfiticateNo">
+      <wsdl:input message="ns1:validateDocumentByProductNoAndCerfiticateNo" name="validateDocumentByProductNoAndCerfiticateNo">
+    </wsdl:input>
+      <wsdl:output message="ns1:validateDocumentByProductNoAndCerfiticateNoResponse" name="validateDocumentByProductNoAndCerfiticateNoResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
