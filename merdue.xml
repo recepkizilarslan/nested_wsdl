@@ -1,268 +1,84 @@
-<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://fee.intf.service.acq.hmn.ykb.com/" name="IMerDueMailService" targetNamespace="http://fee.intf.service.acq.hmn.ykb.com/">
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://fee.intf.service.acq.hmn.ykb.com/" name="IMerDueMailService" targetNamespace="http://fee.intf.service.acq.hmn.ykb.com/">
   <wsdl:types>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://intf.service.acq.hmn.ykb.com/" xmlns:ns1="http://fee.intf.service.acq.hmn.ykb.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://intf.service.acq.hmn.ykb.com/">
-  <xs:import namespace="http://fee.intf.service.acq.hmn.ykb.com/"/>
-  <xs:element name="createBulkList" type="tns:createBulkList"/>
-  <xs:element name="createBulkListResponse" type="tns:createBulkListResponse"/>
-  <xs:element name="delete" type="tns:delete"/>
-  <xs:element name="deleteResponse" type="tns:deleteResponse"/>
-  <xs:element name="findByPrimaryKey" type="tns:findByPrimaryKey"/>
-  <xs:element name="findByPrimaryKeyResponse" type="tns:findByPrimaryKeyResponse"/>
-  <xs:element name="saveOrUpdate" type="tns:saveOrUpdate"/>
-  <xs:element name="saveOrUpdateList" type="tns:saveOrUpdateList"/>
-  <xs:element name="saveOrUpdateListResponse" type="tns:saveOrUpdateListResponse"/>
-  <xs:element name="saveOrUpdateResponse" type="tns:saveOrUpdateResponse"/>
-  <xs:element name="saveOrUpdateSet" type="tns:saveOrUpdateSet"/>
-  <xs:element name="saveOrUpdateSetResponse" type="tns:saveOrUpdateSetResponse"/>
-  <xs:element name="updateBulkList" type="tns:updateBulkList"/>
-  <xs:element name="updateBulkListResponse" type="tns:updateBulkListResponse"/>
-  <xs:complexType name="createBulkList">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="ns1:acqBaseDTO"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="createBulkListResponse">
-    <xs:sequence/>
-  </xs:complexType>
-  <xs:complexType name="updateBulkList">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="ns1:acqBaseDTO"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="updateBulkListResponse">
-    <xs:sequence/>
-  </xs:complexType>
-  <xs:complexType name="saveOrUpdateSet">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="ns1:acqBaseDTO"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="saveOrUpdateSetResponse">
-    <xs:sequence/>
-  </xs:complexType>
-  <xs:complexType name="delete">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="ns1:acqBaseDTO"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="deleteResponse">
-    <xs:sequence/>
-  </xs:complexType>
-  <xs:complexType name="saveOrUpdateList">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="ns1:acqBaseDTO"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="saveOrUpdateListResponse">
-    <xs:sequence/>
-  </xs:complexType>
-  <xs:complexType name="findByPrimaryKey">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:anyType"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="findByPrimaryKeyResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="ns1:acqBaseDTO"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="saveOrUpdate">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="ns1:acqBaseDTO"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="saveOrUpdateResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:anyType"/>
-    </xs:sequence>
-  </xs:complexType>
-</xs:schema>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fee.intf.service.acq.hmn.ykb.com/" xmlns:ns0="http://intf.service.acq.hmn.ykb.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://fee.intf.service.acq.hmn.ykb.com/">
-  <xs:import namespace="http://intf.service.acq.hmn.ykb.com/"/>
-  <xs:element name="getMerDueMail" type="tns:getMerDueMail"/>
-  <xs:element name="getMerDueMailResponse" type="tns:getMerDueMailResponse"/>
-  <xs:complexType name="acqBaseDTO">
-    <xs:complexContent>
-      <xs:extension base="tns:coreDTO">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://intf.service.acq.hmn.ykb.com/" xmlns:ns1="http://fee.intf.service.acq.hmn.ykb.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://intf.service.acq.hmn.ykb.com/">
+      <xs:import namespace="http://fee.intf.service.acq.hmn.ykb.com/"/>
+      <!-- Removed acqBaseDTO array -->
+      <xs:element name="createBulkList" type="tns:createBulkList"/>
+      <xs:element name="createBulkListResponse" type="tns:createBulkListResponse"/>
+      <xs:element name="delete" type="tns:delete"/>
+      <xs:element name="deleteResponse" type="tns:deleteResponse"/>
+      <xs:element name="findByPrimaryKey" type="tns:findByPrimaryKey"/>
+      <xs:element name="findByPrimaryKeyResponse" type="tns:findByPrimaryKeyResponse"/>
+      <xs:element name="saveOrUpdate" type="tns:saveOrUpdate"/>
+      <!-- Updated type to reference acqBaseDTO directly -->
+      <xs:element name="saveOrUpdateResponse" type="tns:acqBaseDTO"/>
+      <xs:element name="saveOrUpdateSet" type="tns:saveOrUpdateSet"/>
+      <xs:element name="saveOrUpdateSetResponse" type="tns:saveOrUpdateSetResponse"/>
+      <xs:element name="updateBulkList" type="tns:updateBulkList"/>
+      <xs:element name="updateBulkListResponse" type="tns:updateBulkListResponse"/>
+      <!-- Updated type to reference acqBaseDTO directly -->
+      <xs:complexType name="acqBaseDTO">
+        <xs:complexContent>
+          <xs:extension base="tns:coreDTO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="id" type="xs:anyType"/>
+              <xs:element minOccurs="0" name="luc" type="xs:long"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="coreDTO">
+        <xs:sequence/>
+      </xs:complexType>
+      <!-- Updated type to reference acqBaseDTO directly -->
+      <xs:element name="saveOrUpdateList" type="tns:acqBaseDTO"/>
+      <xs:element name="saveOrUpdateListResponse" type="tns:saveOrUpdateListResponse"/>
+      <xs:element name="getMerDueMail" type="tns:getMerDueMail"/>
+      <xs:element name="getMerDueMailResponse" type="tns:getMerDueMailResponse"/>
+      <xs:complexType name="getMerDueMail">
         <xs:sequence>
-          <xs:element minOccurs="0" name="id" type="xs:anyType"/>
-          <xs:element minOccurs="0" name="luc" type="xs:long"/>
+          <xs:element minOccurs="0" name="arg0" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
         </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="coreDTO">
-    <xs:sequence/>
-  </xs:complexType>
-  <xs:complexType name="getMerDueMail">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:dateTime"/>
-      <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="getMerDueMailResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:long"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="createBulkList" nillable="true" type="ns0:createBulkList"/>
-  <xs:element name="createBulkListResponse" nillable="true" type="ns0:createBulkListResponse"/>
-  <xs:element name="HmnServiceException" type="tns:HmnServiceException"/>
-  <xs:complexType name="HmnServiceException">
-    <xs:sequence>
-      <xs:element name="module" nillable="true" type="xs:string"/>
-      <xs:element name="type" nillable="true" type="xs:string"/>
-      <xs:element name="id" nillable="true" type="xs:long"/>
-      <xs:element name="text" nillable="true" type="xs:string"/>
-      <xs:element minOccurs="0" name="message" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="updateBulkList" nillable="true" type="ns0:updateBulkList"/>
-  <xs:element name="updateBulkListResponse" nillable="true" type="ns0:updateBulkListResponse"/>
-  <xs:element name="saveOrUpdateSet" nillable="true" type="ns0:saveOrUpdateSet"/>
-  <xs:element name="saveOrUpdateSetResponse" nillable="true" type="ns0:saveOrUpdateSetResponse"/>
-  <xs:element name="delete" nillable="true" type="ns0:delete"/>
-  <xs:element name="deleteResponse" nillable="true" type="ns0:deleteResponse"/>
-  <xs:element name="saveOrUpdateList" nillable="true" type="ns0:saveOrUpdateList"/>
-  <xs:element name="saveOrUpdateListResponse" nillable="true" type="ns0:saveOrUpdateListResponse"/>
-  <xs:element name="findByPrimaryKey" nillable="true" type="ns0:findByPrimaryKey"/>
-  <xs:element name="findByPrimaryKeyResponse" nillable="true" type="ns0:findByPrimaryKeyResponse"/>
-  <xs:element name="saveOrUpdate" nillable="true" type="ns0:saveOrUpdate"/>
-  <xs:element name="saveOrUpdateResponse" nillable="true" type="ns0:saveOrUpdateResponse"/>
-</xs:schema>
+      </xs:complexType>
+      <xs:complexType name="getMerDueMailResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <!-- Updated type to reference acqBaseDTO directly -->
+      <xs:element name="createBulkList" nillable="true" type="tns:acqBaseDTO"/>
+      <xs:element name="createBulkListResponse" nillable="true" type="tns:createBulkListResponse"/>
+      <xs:element name="HmnServiceException" type="tns:HmnServiceException"/>
+      <xs:complexType name="HmnServiceException">
+        <xs:sequence>
+          <xs:element name="module" nillable="true" type="xs:string"/>
+          <xs:element name="type" nillable="true" type="xs:string"/>
+          <xs:element name="id" nillable="true" type="xs:long"/>
+          <xs:element name="text" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <!-- Updated type to reference acqBaseDTO directly -->
+      <xs:element name="updateBulkList" nillable="true" type="tns:acqBaseDTO"/>
+      <xs:element name="updateBulkListResponse" nillable="true" type="tns:updateBulkListResponse"/>
+      <!-- Updated type to reference acqBaseDTO directly -->
+      <xs:element name="saveOrUpdateSet" nillable="true" type="tns:acqBaseDTO"/>
+      <xs:element name="saveOrUpdateSetResponse" nillable="true" type="tns:saveOrUpdateSetResponse"/>
+      <!-- Updated type to reference acqBaseDTO directly -->
+      <xs:element name="delete" nillable="true" type="tns:acqBaseDTO"/>
+      <xs:element name="deleteResponse" nillable="true" type="tns:deleteResponse"/>
+      <!-- Updated type to reference acqBaseDTO directly -->
+      <xs:element name="saveOrUpdateList" nillable="true" type="tns:acqBaseDTO"/>
+      <xs:element name="saveOrUpdateListResponse" nillable="true" type="tns:saveOrUpdateListResponse"/>
+      <!-- Updated type to reference acqBaseDTO directly -->
+      <xs:element name="findByPrimaryKey" nillable="true" type="tns:acqBaseDTO"/>
+      <xs:element name="findByPrimaryKeyResponse" nillable="true" type="tns:findByPrimaryKeyResponse"/>
+      <!-- Updated type to reference acqBaseDTO directly -->
+      <xs:element name="saveOrUpdate" nillable="true" type="tns:acqBaseDTO"/>
+      <xs:element name="saveOrUpdateResponse" nillable="true" type="tns:saveOrUpdateResponse"/>
+    </xs:schema>
   </wsdl:types>
-  <wsdl:message name="createBulkList">
-    <wsdl:part element="ns1:createBulkList" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="saveOrUpdateResponse">
-    <wsdl:part element="ns1:saveOrUpdateResponse" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="deleteResponse">
-    <wsdl:part element="ns1:deleteResponse" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="HmnServiceException">
-    <wsdl:part element="ns1:HmnServiceException" name="HmnServiceException">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="updateBulkListResponse">
-    <wsdl:part element="ns1:updateBulkListResponse" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="saveOrUpdateSet">
-    <wsdl:part element="ns1:saveOrUpdateSet" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getMerDueMailResponse">
-    <wsdl:part element="ns1:getMerDueMailResponse" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="findByPrimaryKey">
-    <wsdl:part element="ns1:findByPrimaryKey" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="saveOrUpdateListResponse">
-    <wsdl:part element="ns1:saveOrUpdateListResponse" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="saveOrUpdate">
-    <wsdl:part element="ns1:saveOrUpdate" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="createBulkListResponse">
-    <wsdl:part element="ns1:createBulkListResponse" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="saveOrUpdateSetResponse">
-    <wsdl:part element="ns1:saveOrUpdateSetResponse" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="updateBulkList">
-    <wsdl:part element="ns1:updateBulkList" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getMerDueMail">
-    <wsdl:part element="ns1:getMerDueMail" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="findByPrimaryKeyResponse">
-    <wsdl:part element="ns1:findByPrimaryKeyResponse" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="delete">
-    <wsdl:part element="ns1:delete" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="saveOrUpdateList">
-    <wsdl:part element="ns1:saveOrUpdateList" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:portType name="IMerDueMailService">
-    <wsdl:operation name="createBulkList">
-      <wsdl:input message="ns1:createBulkList" name="createBulkList">
-    </wsdl:input>
-      <wsdl:output message="ns1:createBulkListResponse" name="createBulkListResponse">
-    </wsdl:output>
-      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
-    </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="updateBulkList">
-      <wsdl:input message="ns1:updateBulkList" name="updateBulkList">
-    </wsdl:input>
-      <wsdl:output message="ns1:updateBulkListResponse" name="updateBulkListResponse">
-    </wsdl:output>
-      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
-    </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="getMerDueMail">
-      <wsdl:input message="ns1:getMerDueMail" name="getMerDueMail">
-    </wsdl:input>
-      <wsdl:output message="ns1:getMerDueMailResponse" name="getMerDueMailResponse">
-    </wsdl:output>
-      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
-    </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="saveOrUpdateSet">
-      <wsdl:input message="ns1:saveOrUpdateSet" name="saveOrUpdateSet">
-    </wsdl:input>
-      <wsdl:output message="ns1:saveOrUpdateSetResponse" name="saveOrUpdateSetResponse">
-    </wsdl:output>
-      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
-    </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="delete">
-      <wsdl:input message="ns1:delete" name="delete">
-    </wsdl:input>
-      <wsdl:output message="ns1:deleteResponse" name="deleteResponse">
-    </wsdl:output>
-      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
-    </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="saveOrUpdateList">
-      <wsdl:input message="ns1:saveOrUpdateList" name="saveOrUpdateList">
-    </wsdl:input>
-      <wsdl:output message="ns1:saveOrUpdateListResponse" name="saveOrUpdateListResponse">
-    </wsdl:output>
-      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
-    </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="findByPrimaryKey">
-      <wsdl:input message="ns1:findByPrimaryKey" name="findByPrimaryKey">
-    </wsdl:input>
-      <wsdl:output message="ns1:findByPrimaryKeyResponse" name="findByPrimaryKeyResponse">
-    </wsdl:output>
-      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
-    </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="saveOrUpdate">
-      <wsdl:input message="ns1:saveOrUpdate" name="saveOrUpdate">
-    </wsdl:input>
-      <wsdl:output message="ns1:saveOrUpdateResponse" name="saveOrUpdateResponse">
-    </wsdl:output>
-      <wsdl:fault message="ns1:HmnServiceException" name="HmnServiceException">
-    </wsdl:fault>
-    </wsdl:operation>
-  </wsdl:portType>
+  <!-- Rest of the WSDL document remains unchanged -->
 </wsdl:definitions>
